@@ -23,7 +23,8 @@ const Cast = () => {
   return (
     <>
       <ListActors>
-        {actorList.map(actor => (
+              {actorList.length > 0 ?(
+                  actorList.map(actor => (
           <ItemActors key={actor.id}>
             <ImgActors
               src={
@@ -36,7 +37,12 @@ const Cast = () => {
             <TextActors>{actor.name}</TextActors>
             <TextActors>{actor.character}</TextActors>
           </ItemActors>
-        ))}
+                  ))
+              ) : (
+                      <p>We don't have any actors information</p>
+              )
+    }
+              
       </ListActors>
     </>
   );
